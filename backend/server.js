@@ -24,7 +24,14 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+
+app.use(cors({
+  origin: [
+    "https://rentease-lilac.vercel.app",
+    "https://rentease-p9ijndf26-nithosh14s-projects.vercel.app"
+  ],
+  credentials: true
+}));
 
 // Routes
 app.use('/products', productRoutes);
@@ -33,8 +40,6 @@ app.use('/users', userRoutes);
 app.use('/cart', require('./routes/cartRoutes'));
 app.use('/admin', require('./routes/adminRoutes'));
 app.use('/notifications', require('./routes/notificationRoutes'));
-
-
 
 // 404 Handler
 app.use((req, res) => {
