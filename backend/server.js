@@ -25,10 +25,13 @@ const app = express();
 // Middleware
 app.use(express.json());
 
+// UPDATED CORS POLICY
 app.use(cors({
   origin: [
     "https://rentease-lilac.vercel.app",
-    "https://rentease-p9ijndf26-nithosh14s-projects.vercel.app"
+    "https://rentease-3a5o94ltg-nithosh14s-projects.vercel.app",
+    "https://rentease-p9ijndf26-nithosh14s-projects.vercel.app",
+    "http://localhost:5173"
   ],
   credentials: true
 }));
